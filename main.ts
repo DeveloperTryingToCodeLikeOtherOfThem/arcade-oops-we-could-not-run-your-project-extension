@@ -3,7 +3,7 @@ namespace config {
     export const ARCADE_SCREEN_HEIGHT = 240 
 }
 
-
+  
  namespace oops {
      export class OOPs{
          _error: string
@@ -15,6 +15,7 @@ namespace config {
          set error(error: string){
              this._error = error
          }
+
 
          constructor() {
              this.error = 'Oops, we could not run your project.'
@@ -49,6 +50,25 @@ namespace config {
              })
              new oops.OOPs().error = 'Cannot read properties of null (reading _width)'
          }
+
+          static oop () {
+              this.error = 'OOPs'
+              scene.createRenderable(-1, () => {
+                  screen.fillRect(
+                      10,
+                      115 * 2 - 10,
+                      25,
+                      10,
+                      4)
+
+                  screen.print(this.error,
+                      10,
+                      115 * 2 - 10,
+                      1,
+                      image.font8)
+              })
+          }
+
          static error: string
 
          static outOfProgram () {
@@ -68,6 +88,8 @@ namespace config {
                     image.font8)
             })
          }
+
+         
 
      }
  }
