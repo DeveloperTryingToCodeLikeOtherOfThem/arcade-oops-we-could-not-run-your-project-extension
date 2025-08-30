@@ -34,8 +34,8 @@ namespace config {
              })
          }
 
-         toString () {
-             console.log(`runtime error ${this.error}`)
+         toString (): string {
+            return `runtime error ${this.error}`
          }
 
          cannotReadPropertiesOfNullReadingWidth() {
